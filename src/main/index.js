@@ -18,7 +18,7 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 720,
+    height: 718,
     useContentSize: true,
     width: 396,
     frame: false,
