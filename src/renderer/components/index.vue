@@ -6,7 +6,7 @@
   <iframe id="content" :src="contentSRC" frameborder="0"></iframe>
 
   <div id="footer" class="w3-bottom w3-blue-grey">
-    <input type="text" id="input-src" v-model.lazy="contentSRC" class="w3-blue-grey" list="urls" placeholder=" Target URL here ...">
+    <input type="text" id="input-src" v-model.lazy="contentSRC" class="w3-blue-grey" list="urls" placeholder=" Target URL here...">
     <datalist id="urls">
       <option value="http://hiuwave.com">hiuwave</option>
       <option value="http://localhost:1700">f7-vue</option>
@@ -32,7 +32,7 @@ module.exports = {
   name:'index',
   components:{},
   data: () => ({
-    contentSRC: "http://hiuwave.com"
+    contentSRC: "http://hiuwave.com/parallax"
   }),
   methods:{
     changeView: () => {
@@ -44,20 +44,23 @@ module.exports = {
 </script>
 
 <style>
-/*iframe::-webkit-scrollbar {
-    width: 1px;
+.content::-webkit-scrollbar {
+    width: 5px!important;
 }
  
-iframe::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+iframe body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
 }
  
-iframe::-webkit-scrollbar-thumb {
+iframe body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
 
-    body{
+ iframe::-webkit-scrollbar {  
+    display: none;
+  }  
+    /*body{
       height: 100%;
       width: 100%;
       background-color: white;
