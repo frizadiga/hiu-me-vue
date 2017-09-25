@@ -6,7 +6,7 @@
   <iframe id="content" :src="contentSRC" frameborder="0"></iframe>
 
   <div id="footer" class="w3-bottom w3-blue-grey">
-    <input id="input-src" v-model="contentSRC" @change="changeView" class="w3-blue-grey" list="urls">
+    <input type="text" id="input-src" v-model.lazy="contentSRC" class="w3-blue-grey" list="urls" placeholder=" Target URL here ...">
     <datalist id="urls">
       <option value="http://hiuwave.com">hiuwave</option>
       <option value="http://localhost:1700">f7-vue</option>
@@ -26,8 +26,8 @@
 </template>
 
 <script>
-let content = document.getElementById('content');
-let inputSRC = document.getElementById('input-src');
+const content = document.getElementById('content');
+const inputSRC = document.getElementById('input-src');
 module.exports = {
   name:'index',
   components:{},
@@ -36,40 +36,54 @@ module.exports = {
   }),
   methods:{
     changeView: () => {
-      content.src = inputSRC.value;
+      // alert('changeView');
+      return this.contentSRC = document.getElementById('input-src').value;
     }
   }
 }
 </script>
 
-<style scoped>
-    
+<style>
+/*iframe::-webkit-scrollbar {
+    width: 1px;
+}
+ 
+iframe::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+iframe::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
     body{
       height: 100%;
       width: 100%;
       background-color: white;
-    }
+    }*/
     #content{
+      z-index: -1;
       width: 100%;
       height: 693.019px;
       /*height: 100vh;*/
     }
     #footer{
-      /*z-index: 100;*/
+      z-index: 100;
       margin-top: 0px;
       padding: 1px 2px 1px 2px;
       /*height: 30px;*/
       /*background-color: rgb(11, 61, 73)!important;*/
       /*color: white;*/
       bottom:0;
-      position: ;
+      position: fixed;
     }
     #title{
       -webkit-app-region: drag;
       padding: 0px 4px 0 0  ;
     }
     #input-src{
-      /*z-index: 101;*/
+      z-index: 101;
       -webkit-app-region: no-drag;
       height: 20px;
       width: 70%;
