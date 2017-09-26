@@ -1,6 +1,6 @@
-# my-project
+# hiu mobile emulator
 
-> An electron-vue project
+> An emulator for dev mobile apps
 
 #### Build Setup
 
