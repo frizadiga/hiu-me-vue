@@ -6,7 +6,8 @@
   <iframe id="content" :src="contentSRC" frameborder="0"></iframe>
 
   <div id="footer" class="w3-bottom w3-blue-grey">
-    <input type="text" id="input-src" v-model.lazy="contentSRC" class="w3-blue-grey" list="urls" placeholder=" Target URL here...">
+    <i class="fa fa-bars"></i> 
+    <input type="text" id="input-src" v-model.lazy="contentSRC" :value="contentSRC" class="w3-blue-grey" list="urls" placeholder=" Target URL here...">
     <datalist id="urls">
       <option value="http://hiuwave.com">hiuwave</option>
       <option value="http://localhost:1700">f7-vue</option>
@@ -74,7 +75,7 @@ iframe body::-webkit-scrollbar-thumb {
     #footer{
       z-index: 100;
       margin-top: 0px;
-      padding: 1px 2px 1px 2px;
+      padding: 1px 2px 1px 6px;
       /*height: 30px;*/
       /*background-color: rgb(11, 61, 73)!important;*/
       /*color: white;*/
